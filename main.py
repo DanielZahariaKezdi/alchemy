@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from database import engine
-from routers import users_router, book_router, authors_router, stats_router
+from db import engine
+from routers import users_router, book_router, authors_router, stats_router, loans_router
 
 app = FastAPI()
 
@@ -23,6 +23,7 @@ app.include_router(users_router)
 app.include_router(book_router)
 app.include_router(authors_router)
 app.include_router(stats_router)
+app.include_router(loans_router)
 
 if __name__ == '__main__':
 
